@@ -25,7 +25,7 @@ function PostCard(props: {
             <Text className="text-xl font-semibold text-pink-400">
               {props.post.title}
             </Text>
-            <Text className="mt-2 text-white">{props.post.content}</Text>
+            <Text className="mt-2 text-black">{props.post.content}</Text>
           </TouchableOpacity>
         </Link>
       </View>
@@ -53,7 +53,7 @@ function CreatePost() {
   return (
     <View className="mt-4">
       <TextInput
-        className="mb-2 rounded bg-white/10 p-2 text-white"
+        className="mb-2 rounded bg-white/10 p-2 text-black"
         placeholderTextColor="rgba(255, 255, 255, 0.5)"
         value={title}
         onChangeText={setTitle}
@@ -65,7 +65,7 @@ function CreatePost() {
         </Text>
       )}
       <TextInput
-        className="mb-2 rounded bg-white/10 p-2 text-white"
+        className="mb-2 rounded bg-white/10 p-2 text-black"
         placeholderTextColor="rgba(255, 255, 255, 0.5)"
         value={content}
         onChangeText={setContent}
@@ -85,7 +85,7 @@ function CreatePost() {
           });
         }}
       >
-        <Text className="font-semibold text-white">Publish post</Text>
+        <Text className="font-semibold text-black">Publish post</Text>
       </TouchableOpacity>
     </View>
   );
@@ -101,22 +101,22 @@ const Index = () => {
   });
 
   return (
-    <SafeAreaView className="bg-[#1F104A]">
+    <SafeAreaView className="bg-[#fff8f4]">
       {/* Changes page title visible on the header */}
       <Stack.Screen options={{ title: "Home Page" }} />
       <View className="h-full w-full p-4">
-        <Text className="mx-auto pb-2 text-5xl font-bold text-white">
-          Create <Text className="text-pink-400">T3</Text> Turbo
+        <Text className="mx-auto pb-2 text-5xl font-bold text-black">
+          The <Text className="text-pink-400">Onion</Text> Talks
         </Text>
 
         <Button
           onPress={() => void utils.post.all.invalidate()}
           title="Refresh posts"
-          color={"#f472b6"}
+          color={"#9d6bff"}
         />
 
         <View className="py-2">
-          <Text className="font-semibold italic text-white">
+          <Text className="font-semibold italic text-black">
             Press on a post
           </Text>
         </View>
@@ -132,7 +132,6 @@ const Index = () => {
             />
           )}
         />
-
         <CreatePost />
       </View>
     </SafeAreaView>
