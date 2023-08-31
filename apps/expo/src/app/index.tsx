@@ -53,7 +53,7 @@ function CreatePost() {
   return (
     <View className="mt-4">
       <TextInput
-        className="mb-2 rounded bg-white/10 p-2 text-black"
+        className="mb-2 rounded bg-gray-400 p-2 text-black"
         placeholderTextColor="rgba(255, 255, 255, 0.5)"
         value={title}
         onChangeText={setTitle}
@@ -79,10 +79,12 @@ function CreatePost() {
       <TouchableOpacity
         className="rounded bg-pink-400 p-2"
         onPress={() => {
-          mutate({
-            title,
-            content,
-          });
+          console.log('content', content),
+            console.log('title', title),
+            mutate({
+              title,
+              content,
+            });
         }}
       >
         <Text className="font-semibold text-black">Publish post</Text>
