@@ -65,11 +65,11 @@ function CreatePost() {
         </Text>
       )}
       <TextInput
-        className="mb-2 rounded bg-white/10 p-2 text-black"
+        className="mb-2 rounded bg-gray-400 p-2 text-black"
         placeholderTextColor="rgba(255, 255, 255, 0.5)"
         value={content}
         onChangeText={setContent}
-        placeholder="Content"
+        placeholder="Peel the onion..."
       />
       {error?.data?.zodError?.fieldErrors.content && (
         <Text className="mb-2 text-red-500">
