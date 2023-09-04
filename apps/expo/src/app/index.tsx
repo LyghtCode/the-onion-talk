@@ -97,6 +97,7 @@ const Index = () => {
   const utils = api.useContext();
 
   const postQuery = api.post.all.useQuery();
+  console.log('postQuery', postQuery.data)
 
   const deletePostMutation = api.post.delete.useMutation({
     onSettled: () => utils.post.all.invalidate(),
@@ -122,6 +123,9 @@ const Index = () => {
             Press on a post
           </Text>
         </View>
+        {postQuery.isLoading && <Text>Loading...</Text>}
+        {/* {postQuery.isError && <Text>Error: {postQuery.error}</Text>} */}
+        {/* {postQuery.isSuccess && <Text>Success</Text>} */}
 
         <FlashList
           data={postQuery.data}
